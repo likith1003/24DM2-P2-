@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
-{% block title %}Login{% endblock title %}
-{% block body %}
-
-{% endblock body %}
+{% block title %}register |{% endblock title %}
+{% block body  %}
+<form action="/register" method="post" class="form-group col-md-4 offset-4 card">
+    {% csrf_token %}
+    <div class="m-4">
+     <label for="">First Name</label>
+     <input type="text" class="form-control" id=""name='fname'>
+      <label for="">Last Name</label>
+     <input type="text" class="form-control" name='lname'>
+     <label for="">Username</label>
+     <input type="text" class="form-control" name='username'>
+     <label for="">Mobile Number</label>
+     <input type="text" class="form-control" name='pno'>
+     <label for="">Gender</label>
+     <input type="radio" name="gender" value='Male'>Male
+     <input type="radio" name="gender" value='Female'>Female <br>
+     <label for="">Email Id</label>
+     <input type="text" class="form-control" name='email'>
+     <label for="">Location</label>
+     <input type="text" class="form-control" name='loc'>
+     <label for="">Enter Password</label>
+     <input type="text" class="form-control" name='pass1'>
+     <label for="">Confirm Password</label>
+     <input type="text" class="form-control" name='pass2'>
+     <button class="btn btn-success">Register</button>
+     <button class="btn btn-success">cancel</button>
+    </div>
+ </form>
+ {% for i in messages %}
+ <h3>{{i}}</h3>
+ {% endfor %}
+ <style>
+    h3{
+        color: brown;
+    }
+ </style>
+{% endblock body  %}

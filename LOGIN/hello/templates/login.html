@@ -1,5 +1,20 @@
 {% extends 'base.html' %}
-{% block title %}Login{% endblock title %}
+{% block title %}Login |{% endblock title %}
 {% block body %}
+<form action="/login" method='post' id="form" class="form-group col-md-4 offset-4 card">
+    
+    {% csrf_token %}
+    <div class="m-4">
+        <label for="">Username</label>
+    <input type="text" class="form-control" name="uname" placeholder="Username">
+    <h6 id="unameh6"></h6>
+    <label for="">Password</label>
+    <input type="password"  name="pass" class="form-control" placeholder="password">
+    <h6 id="passh6"></h6>
+    <button>Login</button>
+    <h6 id="btnh6"></h6>
+    </div>
+
+</form>
 
 {% endblock body %}
